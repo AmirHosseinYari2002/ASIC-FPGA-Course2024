@@ -1,0 +1,44 @@
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+# Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+# File: C:\Users\babbage\Desktop\university\FPGA\Lab\Assgn_1\New folder\Part4\Part4.csv
+# Generated on: Sat Feb 24 15:51:03 2024
+
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus II software.
+
+To,Direction,Location,I/O Bank,VREF Group,Fitter Location,I/O Standard,Reserved,Current Strength,Differential Pair
+CLOCK_50,Input,PIN_N2,2,B2_N1,PIN_N23,,,,
+HEX0[6],Output,PIN_V13,8,B8_N0,PIN_V13,,,,
+HEX0[5],Output,PIN_V14,8,B8_N0,PIN_V14,,,,
+HEX0[4],Output,PIN_AE11,8,B8_N0,PIN_AE11,,,,
+HEX0[3],Output,PIN_AD11,8,B8_N0,PIN_AD11,,,,
+HEX0[2],Output,PIN_AC12,8,B8_N0,PIN_AC12,,,,
+HEX0[1],Output,PIN_AB12,8,B8_N0,PIN_AB12,,,,
+HEX0[0],Output,PIN_AF10,8,B8_N0,PIN_AF10,,,,
+HEX1[6],Output,PIN_AB24,6,B6_N1,PIN_AB24,,,,
+HEX1[5],Output,PIN_AA23,6,B6_N1,PIN_AA23,,,,
+HEX1[4],Output,PIN_AA24,6,B6_N1,PIN_AA24,,,,
+HEX1[3],Output,PIN_Y22,6,B6_N1,PIN_Y22,,,,
+HEX1[2],Output,PIN_W21,6,B6_N1,PIN_W21,,,,
+HEX1[1],Output,PIN_V21,6,B6_N1,PIN_V21,,,,
+HEX1[0],Output,PIN_V20,6,B6_N1,PIN_V20,,,,
+HEX2[6],Output,PIN_Y24,6,B6_N1,PIN_Y24,,,,
+HEX2[5],Output,PIN_AB25,6,B6_N1,PIN_AB25,,,,
+HEX2[4],Output,PIN_AB26,6,B6_N1,PIN_AB26,,,,
+HEX2[3],Output,PIN_AC26,6,B6_N1,PIN_AC26,,,,
+HEX2[2],Output,PIN_AC25,6,B6_N1,PIN_AC25,,,,
+HEX2[1],Output,PIN_V22,6,B6_N1,PIN_V22,,,,
+HEX2[0],Output,PIN_AB23,6,B6_N1,PIN_AB23,,,,
+KEY[0],Input,PIN_G26,5,B5_N0,PIN_G26,,,,

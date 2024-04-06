@@ -1,0 +1,1101 @@
+TimeQuest Timing Analyzer report for Part7a
+Sat Mar 02 13:56:05 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'CLOCK_50'
+ 12. Slow Model Hold: 'CLOCK_50'
+ 13. Slow Model Minimum Pulse Width: 'CLOCK_50'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'CLOCK_50'
+ 24. Fast Model Hold: 'CLOCK_50'
+ 25. Fast Model Minimum Pulse Width: 'CLOCK_50'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; Part7a                                                            ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                               ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets      ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; CLOCK_50   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK_50 } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                   ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 522.19 MHz ; 420.17 MHz      ; CLOCK_50   ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------+
+; Slow Model Setup Summary          ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLOCK_50 ; -0.915 ; -24.025       ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Slow Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.391 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++----------+--------+--------------------+
+; Clock    ; Slack  ; End Point TNS      ;
++----------+--------+--------------------+
+; CLOCK_50 ; -1.380 ; -34.380            ;
++----------+--------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'CLOCK_50'                                                                                                                                                                                                                                       ;
++--------+-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                               ; To Node                                                                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.915 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.951      ;
+; -0.915 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.951      ;
+; -0.915 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.951      ;
+; -0.915 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.951      ;
+; -0.890 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[7]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 1.927      ;
+; -0.882 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.918      ;
+; -0.882 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.918      ;
+; -0.882 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.918      ;
+; -0.882 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.918      ;
+; -0.854 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.890      ;
+; -0.854 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.890      ;
+; -0.854 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[5]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.890      ;
+; -0.854 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[4]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.890      ;
+; -0.854 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[3]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.890      ;
+; -0.854 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.890      ;
+; -0.854 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[1]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.890      ;
+; -0.854 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[0]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.890      ;
+; -0.849 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.005      ; 1.890      ;
+; -0.849 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.005      ; 1.890      ;
+; -0.841 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 1.872      ;
+; -0.814 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.005      ; 1.855      ;
+; -0.814 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.005      ; 1.855      ;
+; -0.803 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.839      ;
+; -0.791 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.827      ;
+; -0.779 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.815      ;
+; -0.779 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.815      ;
+; -0.779 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.815      ;
+; -0.779 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.815      ;
+; -0.777 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.813      ;
+; -0.774 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.005      ; 1.815      ;
+; -0.770 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 1.801      ;
+; -0.765 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.801      ;
+; -0.764 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                   ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.800      ;
+; -0.762 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.005      ; 1.803      ;
+; -0.761 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                   ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.797      ;
+; -0.760 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                   ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.796      ;
+; -0.756 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                   ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 1.793      ;
+; -0.756 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                   ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 1.793      ;
+; -0.756 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                   ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 1.793      ;
+; -0.744 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                      ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.780      ;
+; -0.737 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.773      ;
+; -0.737 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.773      ;
+; -0.737 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[5]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.773      ;
+; -0.737 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[4]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.773      ;
+; -0.737 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[3]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.773      ;
+; -0.737 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.773      ;
+; -0.737 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[1]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.773      ;
+; -0.737 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[0]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.773      ;
+; -0.736 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                      ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.772      ;
+; -0.728 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                      ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.764      ;
+; -0.726 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.005      ; 1.767      ;
+; -0.720 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[4]                   ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.756      ;
+; -0.714 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                  ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[7]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.006      ; 1.756      ;
+; -0.713 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 1.750      ;
+; -0.713 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 1.750      ;
+; -0.713 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 1.750      ;
+; -0.713 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 1.750      ;
+; -0.713 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 1.750      ;
+; -0.713 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[4]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 1.750      ;
+; -0.713 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 1.750      ;
+; -0.709 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                      ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.745      ;
+; -0.708 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.744      ;
+; -0.708 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.744      ;
+; -0.708 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[5]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.744      ;
+; -0.708 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[4]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.744      ;
+; -0.708 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[3]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.744      ;
+; -0.708 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.744      ;
+; -0.708 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[1]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.744      ;
+; -0.708 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[0]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.744      ;
+; -0.670 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                   ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.706      ;
+; -0.666 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.702      ;
+; -0.626 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                      ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.662      ;
+; -0.623 ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 1.654      ;
+; -0.613 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[3]                  ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.006      ; 1.655      ;
+; -0.613 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[5]                  ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.006      ; 1.655      ;
+; -0.613 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[1]                  ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.006      ; 1.655      ;
+; -0.606 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                   ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.642      ;
+; -0.602 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                   ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.638      ;
+; -0.591 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.005      ; 1.632      ;
+; -0.587 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.623      ;
+; -0.570 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                   ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.606      ;
+; -0.565 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                      ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.601      ;
+; -0.564 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                   ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.600      ;
+; -0.552 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[4]                  ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[4]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.006      ; 1.594      ;
+; -0.551 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.005      ; 1.592      ;
+; -0.543 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                   ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.579      ;
+; -0.534 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                   ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.570      ;
+; -0.531 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                   ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.567      ;
+; -0.530 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                   ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.566      ;
+; -0.485 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                  ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.006      ; 1.527      ;
+; -0.485 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                      ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.521      ;
+; -0.483 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                  ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.006      ; 1.525      ;
+; -0.468 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                  ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.504      ;
+; -0.441 ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.477      ;
+; -0.434 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                   ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.470      ;
+; -0.434 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                   ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.470      ;
+; -0.433 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                      ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.469      ;
+; -0.427 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                      ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.463      ;
+; -0.425 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                      ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.461      ;
+; -0.409 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                   ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.445      ;
++--------+-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'CLOCK_50'                                                                                                                                                                                                                                         ;
++-------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                                 ; To Node                                                                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.648 ; PS2_Controller:PS2|ps2_clk_reg                                                            ; PS2_Controller:PS2|last_ps2_clk                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.914      ;
+; 0.664 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.930      ;
+; 0.673 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                     ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.939      ;
+; 0.781 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                     ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.047      ;
+; 0.783 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                     ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.049      ;
+; 0.788 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[1]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.054      ;
+; 0.790 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.056      ;
+; 0.790 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.056      ;
+; 0.794 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[5]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.060      ;
+; 0.794 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[4]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[3]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.060      ;
+; 0.798 ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.064      ;
+; 0.802 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.068      ;
+; 0.804 ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.070      ;
+; 0.823 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                     ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.089      ;
+; 0.825 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[4]                     ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.091      ;
+; 0.827 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[0]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.006      ; 1.099      ;
+; 0.831 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.097      ;
+; 0.834 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.100      ;
+; 0.834 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.100      ;
+; 0.866 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.132      ;
+; 0.932 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[1]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[0]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.198      ;
+; 0.944 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.210      ;
+; 0.990 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[7]                     ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.256      ;
+; 0.991 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[7]                     ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.257      ;
+; 0.993 ; PS2_Controller:PS2|ps2_data_reg                                                           ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.005     ; 1.254      ;
+; 0.994 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[7]                     ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.260      ;
+; 1.010 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 1.281      ;
+; 1.066 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[3]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.332      ;
+; 1.069 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[4]                     ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.335      ;
+; 1.079 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[5]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[4]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.345      ;
+; 1.085 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.351      ;
+; 1.138 ; PS2_Controller:PS2|ps2_clk_reg                                                            ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.404      ;
+; 1.139 ; PS2_Controller:PS2|ps2_clk_reg                                                            ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.405      ;
+; 1.139 ; PS2_Controller:PS2|ps2_clk_reg                                                            ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.405      ;
+; 1.142 ; PS2_Controller:PS2|ps2_clk_reg                                                            ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.408      ;
+; 1.143 ; PS2_Controller:PS2|ps2_clk_reg                                                            ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 1.414      ;
+; 1.147 ; PS2_Controller:PS2|ps2_data_reg                                                           ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.413      ;
+; 1.147 ; PS2_Controller:PS2|ps2_data_reg                                                           ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.413      ;
+; 1.179 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                     ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.445      ;
+; 1.195 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.461      ;
+; 1.197 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.463      ;
+; 1.203 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.469      ;
+; 1.204 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                     ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.470      ;
+; 1.204 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                     ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.470      ;
+; 1.211 ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.477      ;
+; 1.238 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.504      ;
+; 1.241 ; PS2_Controller:PS2|last_ps2_clk                                                           ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.507      ;
+; 1.242 ; PS2_Controller:PS2|last_ps2_clk                                                           ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.508      ;
+; 1.242 ; PS2_Controller:PS2|last_ps2_clk                                                           ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.508      ;
+; 1.243 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.509      ;
+; 1.244 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.510      ;
+; 1.244 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.510      ;
+; 1.245 ; PS2_Controller:PS2|last_ps2_clk                                                           ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.511      ;
+; 1.247 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.513      ;
+; 1.253 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.006      ; 1.525      ;
+; 1.255 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.006      ; 1.527      ;
+; 1.255 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.521      ;
+; 1.300 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                     ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.566      ;
+; 1.301 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                     ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.567      ;
+; 1.304 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                     ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.570      ;
+; 1.321 ; PS2_Controller:PS2|last_ps2_clk                                                           ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 1.592      ;
+; 1.322 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[4]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[4]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.006      ; 1.594      ;
+; 1.334 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                     ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.600      ;
+; 1.335 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.601      ;
+; 1.340 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                     ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.606      ;
+; 1.357 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.623      ;
+; 1.361 ; PS2_Controller:PS2|last_ps2_clk                                                           ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 1.632      ;
+; 1.372 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                     ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.638      ;
+; 1.376 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                     ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.642      ;
+; 1.383 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[3]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.006      ; 1.655      ;
+; 1.383 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[5]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.006      ; 1.655      ;
+; 1.383 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[1]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.006      ; 1.655      ;
+; 1.393 ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.005     ; 1.654      ;
+; 1.396 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.662      ;
+; 1.436 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.702      ;
+; 1.440 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                     ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.706      ;
+; 1.478 ; PS2_Controller:PS2|last_ps2_clk                                                           ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.744      ;
+; 1.478 ; PS2_Controller:PS2|last_ps2_clk                                                           ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.744      ;
+; 1.478 ; PS2_Controller:PS2|last_ps2_clk                                                           ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[5]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.744      ;
+; 1.478 ; PS2_Controller:PS2|last_ps2_clk                                                           ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[4]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.744      ;
+; 1.478 ; PS2_Controller:PS2|last_ps2_clk                                                           ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[3]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.744      ;
+; 1.478 ; PS2_Controller:PS2|last_ps2_clk                                                           ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.744      ;
+; 1.478 ; PS2_Controller:PS2|last_ps2_clk                                                           ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[1]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.744      ;
+; 1.478 ; PS2_Controller:PS2|last_ps2_clk                                                           ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[0]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.744      ;
+; 1.479 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.745      ;
+; 1.483 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.750      ;
+; 1.483 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.750      ;
+; 1.483 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.750      ;
+; 1.483 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.750      ;
+; 1.483 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.750      ;
+; 1.483 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[4]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.750      ;
+; 1.483 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.750      ;
+; 1.484 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[7]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.006      ; 1.756      ;
++-------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'CLOCK_50'                                                                                                                                    ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                                                                    ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[0]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[0]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[1]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[1]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[3]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[3]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[4]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[4]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[5]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[5]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[4]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[4]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[7]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[7]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|last_ps2_clk                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|last_ps2_clk                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|ps2_clk_reg                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|ps2_clk_reg                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|ps2_data_reg                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|ps2_data_reg                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; handshake_p1:h|data_register[0]                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; handshake_p1:h|data_register[0]                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; handshake_p1:h|data_register[1]                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; handshake_p1:h|data_register[1]                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; handshake_p1:h|data_register[2]                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; handshake_p1:h|data_register[2]                                                           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50|combout                                                                          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50|combout                                                                          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|inclk[0]                                                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|inclk[0]                                                                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|outclk                                                                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|outclk                                                                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_count[0]|clk                                                         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_count[0]|clk                                                         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_count[1]|clk                                                         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_count[1]|clk                                                         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_count[2]|clk                                                         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_count[2]|clk                                                         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_count[3]|clk                                                         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_count[3]|clk                                                         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[0]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[0]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[1]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[1]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[2]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[2]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[3]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[3]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[4]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[4]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[5]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[5]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[6]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[6]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[7]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[7]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|received_data[0]|clk                                                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|received_data[0]|clk                                                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|received_data[1]|clk                                                      ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; 4.757 ; 4.757 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 4.757 ; 4.757 ; Rise       ; CLOCK_50        ;
+; PS2_CLK   ; CLOCK_50   ; 3.684 ; 3.684 ; Rise       ; CLOCK_50        ;
+; PS2_DAT   ; CLOCK_50   ; 3.989 ; 3.989 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; -3.279 ; -3.279 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; -3.279 ; -3.279 ; Rise       ; CLOCK_50        ;
+; PS2_CLK   ; CLOCK_50   ; -3.454 ; -3.454 ; Rise       ; CLOCK_50        ;
+; PS2_DAT   ; CLOCK_50   ; -3.759 ; -3.759 ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; CLOCK_50   ; 8.146 ; 8.146 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 8.146 ; 8.146 ; Rise       ; CLOCK_50        ;
+;  LEDR[1]  ; CLOCK_50   ; 7.754 ; 7.754 ; Rise       ; CLOCK_50        ;
+;  LEDR[2]  ; CLOCK_50   ; 7.989 ; 7.989 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; CLOCK_50   ; 7.754 ; 7.754 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 8.146 ; 8.146 ; Rise       ; CLOCK_50        ;
+;  LEDR[1]  ; CLOCK_50   ; 7.754 ; 7.754 ; Rise       ; CLOCK_50        ;
+;  LEDR[2]  ; CLOCK_50   ; 7.989 ; 7.989 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------+
+; Fast Model Setup Summary         ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.049 ; 0.000         ;
++----------+-------+---------------+
+
+
++----------------------------------+
+; Fast Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.215 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++----------+--------+--------------------+
+; Clock    ; Slack  ; End Point TNS      ;
++----------+--------+--------------------+
+; CLOCK_50 ; -1.380 ; -34.380            ;
++----------+--------+--------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'CLOCK_50'                                                                                                                                                                                                                                      ;
++-------+-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                               ; To Node                                                                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.049 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.983      ;
+; 0.049 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.983      ;
+; 0.049 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.983      ;
+; 0.049 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.983      ;
+; 0.055 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[7]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 0.978      ;
+; 0.055 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 0.976      ;
+; 0.055 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 0.976      ;
+; 0.055 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 0.976      ;
+; 0.055 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 0.976      ;
+; 0.072 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.960      ;
+; 0.072 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.960      ;
+; 0.072 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[5]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.960      ;
+; 0.072 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[4]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.960      ;
+; 0.072 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[3]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.960      ;
+; 0.072 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.960      ;
+; 0.072 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[1]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.960      ;
+; 0.072 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[0]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.960      ;
+; 0.100 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 0.931      ;
+; 0.100 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 0.931      ;
+; 0.100 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 0.931      ;
+; 0.100 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 0.931      ;
+; 0.116 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                   ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.916      ;
+; 0.116 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                   ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.916      ;
+; 0.116 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                   ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.916      ;
+; 0.129 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.903      ;
+; 0.129 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.903      ;
+; 0.129 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.903      ;
+; 0.129 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.903      ;
+; 0.129 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.903      ;
+; 0.129 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[4]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.903      ;
+; 0.129 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.903      ;
+; 0.131 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 0.902      ;
+; 0.131 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 0.902      ;
+; 0.131 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[5]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 0.902      ;
+; 0.131 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[4]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 0.902      ;
+; 0.131 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[3]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 0.902      ;
+; 0.131 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 0.902      ;
+; 0.131 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[1]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 0.902      ;
+; 0.131 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[0]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 0.902      ;
+; 0.146 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.886      ;
+; 0.146 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.886      ;
+; 0.146 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[5]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.886      ;
+; 0.146 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[4]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.886      ;
+; 0.146 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[3]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.886      ;
+; 0.146 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.886      ;
+; 0.146 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[1]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.886      ;
+; 0.146 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[0]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.886      ;
+; 0.148 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 0.879      ;
+; 0.165 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 0.871      ;
+; 0.165 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 0.871      ;
+; 0.166 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 0.865      ;
+; 0.168 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 0.863      ;
+; 0.174 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 0.857      ;
+; 0.176 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 0.855      ;
+; 0.181 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 0.855      ;
+; 0.181 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 0.855      ;
+; 0.182 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                   ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.850      ;
+; 0.182 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                   ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.850      ;
+; 0.184 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                   ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.848      ;
+; 0.186 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 0.850      ;
+; 0.194 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 0.842      ;
+; 0.197 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                  ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[7]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.005      ; 0.840      ;
+; 0.201 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                      ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.831      ;
+; 0.204 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                      ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.828      ;
+; 0.205 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                      ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.827      ;
+; 0.205 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 0.822      ;
+; 0.208 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                      ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.824      ;
+; 0.211 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[4]                   ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.821      ;
+; 0.213 ; PS2_Controller:PS2|ps2_clk_reg                                                          ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 0.823      ;
+; 0.214 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.818      ;
+; 0.227 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[4]                  ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[4]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 0.809      ;
+; 0.227 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                   ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.805      ;
+; 0.245 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                      ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.787      ;
+; 0.260 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                   ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.772      ;
+; 0.262 ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 0.765      ;
+; 0.263 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                   ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.769      ;
+; 0.268 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 0.768      ;
+; 0.269 ; PS2_Controller:PS2|last_ps2_clk                                                         ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 0.767      ;
+; 0.270 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                   ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.762      ;
+; 0.271 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[1]                  ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 0.765      ;
+; 0.271 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.761      ;
+; 0.272 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[5]                  ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 0.764      ;
+; 0.273 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[3]                  ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 0.763      ;
+; 0.274 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                   ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.758      ;
+; 0.278 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                      ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.754      ;
+; 0.289 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                   ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.743      ;
+; 0.296 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                  ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 0.740      ;
+; 0.296 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                  ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                     ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 0.740      ;
+; 0.300 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                   ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.732      ;
+; 0.300 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                   ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.732      ;
+; 0.302 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                   ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.730      ;
+; 0.310 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                  ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.722      ;
+; 0.327 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                      ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.705      ;
+; 0.329 ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.703      ;
+; 0.332 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                      ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.700      ;
+; 0.333 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                      ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.699      ;
+; 0.334 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                   ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.698      ;
+; 0.335 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                   ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.697      ;
+; 0.336 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                      ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.696      ;
+; 0.341 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                   ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 0.691      ;
++-------+-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'CLOCK_50'                                                                                                                                                                                                                                         ;
++-------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                                 ; To Node                                                                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.293 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.445      ;
+; 0.302 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                     ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.454      ;
+; 0.306 ; PS2_Controller:PS2|ps2_clk_reg                                                            ; PS2_Controller:PS2|last_ps2_clk                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.458      ;
+; 0.361 ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.365 ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                     ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.517      ;
+; 0.368 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.520      ;
+; 0.369 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                     ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.371 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.523      ;
+; 0.372 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.379 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[1]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.531      ;
+; 0.381 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[4]                     ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.533      ;
+; 0.383 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[5]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.535      ;
+; 0.383 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[4]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[3]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.535      ;
+; 0.385 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.537      ;
+; 0.385 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                     ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.537      ;
+; 0.386 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.538      ;
+; 0.386 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.538      ;
+; 0.390 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.542      ;
+; 0.392 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[0]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.004      ; 0.548      ;
+; 0.414 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[1]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[0]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.566      ;
+; 0.421 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.573      ;
+; 0.450 ; PS2_Controller:PS2|ps2_data_reg                                                           ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 0.598      ;
+; 0.457 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 0.614      ;
+; 0.473 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[7]                     ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.624      ;
+; 0.475 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[7]                     ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.626      ;
+; 0.475 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[7]                     ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.626      ;
+; 0.491 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[4]                     ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.643      ;
+; 0.494 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[3]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.646      ;
+; 0.503 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[5]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[4]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.655      ;
+; 0.503 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.655      ;
+; 0.508 ; PS2_Controller:PS2|ps2_clk_reg                                                            ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.659      ;
+; 0.510 ; PS2_Controller:PS2|ps2_clk_reg                                                            ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.661      ;
+; 0.510 ; PS2_Controller:PS2|ps2_clk_reg                                                            ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.661      ;
+; 0.513 ; PS2_Controller:PS2|ps2_clk_reg                                                            ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.664      ;
+; 0.523 ; PS2_Controller:PS2|ps2_data_reg                                                           ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.675      ;
+; 0.523 ; PS2_Controller:PS2|ps2_data_reg                                                           ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.675      ;
+; 0.532 ; PS2_Controller:PS2|ps2_clk_reg                                                            ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.004      ; 0.688      ;
+; 0.539 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                     ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.691      ;
+; 0.544 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.696      ;
+; 0.545 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                     ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.697      ;
+; 0.546 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                     ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.698      ;
+; 0.547 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.699      ;
+; 0.548 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.700      ;
+; 0.551 ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.703      ;
+; 0.553 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.705      ;
+; 0.553 ; PS2_Controller:PS2|last_ps2_clk                                                           ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.704      ;
+; 0.555 ; PS2_Controller:PS2|last_ps2_clk                                                           ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.706      ;
+; 0.555 ; PS2_Controller:PS2|last_ps2_clk                                                           ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.706      ;
+; 0.558 ; PS2_Controller:PS2|last_ps2_clk                                                           ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.709      ;
+; 0.568 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.720      ;
+; 0.570 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.722      ;
+; 0.570 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.722      ;
+; 0.570 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.722      ;
+; 0.573 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.725      ;
+; 0.578 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                     ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.730      ;
+; 0.580 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                     ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.732      ;
+; 0.580 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                     ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.732      ;
+; 0.584 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.004      ; 0.740      ;
+; 0.584 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.004      ; 0.740      ;
+; 0.602 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.754      ;
+; 0.606 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                     ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.758      ;
+; 0.607 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[3]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.004      ; 0.763      ;
+; 0.608 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[5]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.004      ; 0.764      ;
+; 0.609 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[1]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.004      ; 0.765      ;
+; 0.609 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.761      ;
+; 0.610 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                     ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.762      ;
+; 0.611 ; PS2_Controller:PS2|last_ps2_clk                                                           ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.004      ; 0.767      ;
+; 0.612 ; PS2_Controller:PS2|last_ps2_clk                                                           ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.004      ; 0.768      ;
+; 0.617 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                     ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.769      ;
+; 0.618 ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.005     ; 0.765      ;
+; 0.620 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                     ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.772      ;
+; 0.635 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.787      ;
+; 0.653 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[4]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[4]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.004      ; 0.809      ;
+; 0.653 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                     ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.805      ;
+; 0.666 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.818      ;
+; 0.667 ; PS2_Controller:PS2|ps2_clk_reg                                                            ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.004      ; 0.823      ;
+; 0.669 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[4]                     ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.821      ;
+; 0.672 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.824      ;
+; 0.675 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.827      ;
+; 0.675 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.005     ; 0.822      ;
+; 0.676 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.828      ;
+; 0.679 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.831      ;
+; 0.683 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[7]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 0.840      ;
+; 0.686 ; PS2_Controller:PS2|last_ps2_clk                                                           ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.004      ; 0.842      ;
+; 0.694 ; PS2_Controller:PS2|ps2_clk_reg                                                            ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.004      ; 0.850      ;
+; 0.696 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                     ; handshake_p1:h|data_register[0]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.848      ;
+; 0.698 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                     ; handshake_p1:h|data_register[1]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.850      ;
+; 0.698 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                     ; handshake_p1:h|data_register[2]                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.850      ;
+; 0.699 ; PS2_Controller:PS2|last_ps2_clk                                                           ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.004      ; 0.855      ;
+; 0.699 ; PS2_Controller:PS2|last_ps2_clk                                                           ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.004      ; 0.855      ;
+; 0.704 ; PS2_Controller:PS2|last_ps2_clk                                                           ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.855      ;
+; 0.706 ; PS2_Controller:PS2|last_ps2_clk                                                           ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.857      ;
++-------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'CLOCK_50'                                                                                                                                    ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                                                                    ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[0]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[0]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[1]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[1]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[3]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[3]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[4]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[4]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[5]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[5]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[4]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[4]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[7]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[7]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|last_ps2_clk                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|last_ps2_clk                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|ps2_clk_reg                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|ps2_clk_reg                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|ps2_data_reg                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|ps2_data_reg                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; handshake_p1:h|data_register[0]                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; handshake_p1:h|data_register[0]                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; handshake_p1:h|data_register[1]                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; handshake_p1:h|data_register[1]                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; handshake_p1:h|data_register[2]                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; handshake_p1:h|data_register[2]                                                           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50|combout                                                                          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50|combout                                                                          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|inclk[0]                                                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|inclk[0]                                                                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|outclk                                                                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|outclk                                                                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_count[0]|clk                                                         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_count[0]|clk                                                         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_count[1]|clk                                                         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_count[1]|clk                                                         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_count[2]|clk                                                         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_count[2]|clk                                                         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_count[3]|clk                                                         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_count[3]|clk                                                         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[0]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[0]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[1]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[1]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[2]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[2]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[3]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[3]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[4]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[4]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[5]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[5]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[6]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[6]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[7]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|data_shift_reg[7]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|received_data[0]|clk                                                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|received_data[0]|clk                                                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2|PS2_Data_In|received_data[1]|clk                                                      ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; 2.503 ; 2.503 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 2.503 ; 2.503 ; Rise       ; CLOCK_50        ;
+; PS2_CLK   ; CLOCK_50   ; 1.994 ; 1.994 ; Rise       ; CLOCK_50        ;
+; PS2_DAT   ; CLOCK_50   ; 2.145 ; 2.145 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; -1.813 ; -1.813 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; -1.813 ; -1.813 ; Rise       ; CLOCK_50        ;
+; PS2_CLK   ; CLOCK_50   ; -1.874 ; -1.874 ; Rise       ; CLOCK_50        ;
+; PS2_DAT   ; CLOCK_50   ; -2.025 ; -2.025 ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; CLOCK_50   ; 4.511 ; 4.511 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 4.511 ; 4.511 ; Rise       ; CLOCK_50        ;
+;  LEDR[1]  ; CLOCK_50   ; 4.363 ; 4.363 ; Rise       ; CLOCK_50        ;
+;  LEDR[2]  ; CLOCK_50   ; 4.426 ; 4.426 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; CLOCK_50   ; 4.363 ; 4.363 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 4.511 ; 4.511 ; Rise       ; CLOCK_50        ;
+;  LEDR[1]  ; CLOCK_50   ; 4.363 ; 4.363 ; Rise       ; CLOCK_50        ;
+;  LEDR[2]  ; CLOCK_50   ; 4.426 ; 4.426 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -0.915  ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+;  CLOCK_50        ; -0.915  ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -24.025 ; 0.0   ; 0.0      ; 0.0     ; -34.38              ;
+;  CLOCK_50        ; -24.025 ; 0.000 ; N/A      ; N/A     ; -34.380             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; 4.757 ; 4.757 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 4.757 ; 4.757 ; Rise       ; CLOCK_50        ;
+; PS2_CLK   ; CLOCK_50   ; 3.684 ; 3.684 ; Rise       ; CLOCK_50        ;
+; PS2_DAT   ; CLOCK_50   ; 3.989 ; 3.989 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; -1.813 ; -1.813 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; -1.813 ; -1.813 ; Rise       ; CLOCK_50        ;
+; PS2_CLK   ; CLOCK_50   ; -1.874 ; -1.874 ; Rise       ; CLOCK_50        ;
+; PS2_DAT   ; CLOCK_50   ; -2.025 ; -2.025 ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; CLOCK_50   ; 8.146 ; 8.146 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 8.146 ; 8.146 ; Rise       ; CLOCK_50        ;
+;  LEDR[1]  ; CLOCK_50   ; 7.754 ; 7.754 ; Rise       ; CLOCK_50        ;
+;  LEDR[2]  ; CLOCK_50   ; 7.989 ; 7.989 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; CLOCK_50   ; 4.363 ; 4.363 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 4.511 ; 4.511 ; Rise       ; CLOCK_50        ;
+;  LEDR[1]  ; CLOCK_50   ; 4.363 ; 4.363 ; Rise       ; CLOCK_50        ;
+;  LEDR[2]  ; CLOCK_50   ; 4.426 ; 4.426 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 154      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 154      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 3     ; 3    ;
+; Unconstrained Input Port Paths  ; 35    ; 35   ;
+; Unconstrained Output Ports      ; 3     ; 3    ;
+; Unconstrained Output Port Paths ; 3     ; 3    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Mar 02 13:56:04 2024
+Info: Command: quartus_sta Part7a -c Part7a
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Part7a.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLOCK_50 CLOCK_50
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.915
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.915       -24.025 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -34.380 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332146): Worst-case setup slack is 0.049
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.049         0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -34.380 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4536 megabytes
+    Info: Processing ended: Sat Mar 02 13:56:05 2024
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
+
+

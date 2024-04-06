@@ -1,0 +1,13 @@
+
+State Machine - |Part6|y
+Name y~6 y~5 y~4 y~3 
+y.A 0 0 0 0 
+y.B 0 0 0 1 
+y.C 0 0 1 0 
+y.D 0 0 1 1 
+y.E 0 1 0 0 
+y.F 0 1 0 1 
+y.G 0 1 1 0 
+y.H 0 1 1 1 
+y.I 1 0 0 0 
+y.Wait 1 0 0 1 

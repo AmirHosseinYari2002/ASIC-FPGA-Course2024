@@ -1,0 +1,61 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Documents and Settings/Administrator/Desktop/Xillinx projects/Lab4/Lab3/DUT_tb_isim_beh.exe -prj C:/Documents and Settings/Administrator/Desktop/Xillinx projects/Lab4/Lab3/DUT_tb_beh.prj work.DUT_tb work.glbl 
+ISim P.20131013 (signature 0x8ef4fb42)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Documents and Settings/Administrator/Desktop/Xillinx projects/Lab4/Lab3/ipcore_dir/CORDIC.v" into library work
+Analyzing Verilog file "C:/Documents and Settings/Administrator/Desktop/Xillinx projects/Lab4/Lab3/ipcore_dir/MultAdd1.v" into library work
+WARNING:HDLCompiler:687 - "C:/Documents and Settings/Administrator/Desktop/Xillinx projects/Lab4/Lab3/ipcore_dir/MultAdd1.v" Line 231: Illegal redeclaration of module <glbl>.
+Analyzing Verilog file "C:/Documents and Settings/Administrator/Desktop/Xillinx projects/Lab4/Lab3/ipcore_dir/MultAdd2.v" into library work
+WARNING:HDLCompiler:687 - "C:/Documents and Settings/Administrator/Desktop/Xillinx projects/Lab4/Lab3/ipcore_dir/MultAdd2.v" Line 233: Illegal redeclaration of module <glbl>.
+Analyzing Verilog file "C:/Documents and Settings/Administrator/Desktop/Xillinx projects/Lab4/Lab3/ipcore_dir/MultAdd3.v" into library work
+WARNING:HDLCompiler:687 - "C:/Documents and Settings/Administrator/Desktop/Xillinx projects/Lab4/Lab3/ipcore_dir/MultAdd3.v" Line 232: Illegal redeclaration of module <glbl>.
+Analyzing Verilog file "C:/Documents and Settings/Administrator/Desktop/Xillinx projects/Lab4/Lab3/ComplexMultiplier3.v" into library work
+Analyzing Verilog file "C:/Documents and Settings/Administrator/Desktop/Xillinx projects/Lab4/Lab3/ComplexMultiplier2.v" into library work
+Analyzing Verilog file "C:/Documents and Settings/Administrator/Desktop/Xillinx projects/Lab4/Lab3/ComplexMultiplier1.v" into library work
+Analyzing Verilog file "C:/Documents and Settings/Administrator/Desktop/Xillinx projects/Lab4/Lab3/ComplexMultiplier.v" into library work
+Analyzing Verilog file "C:/Documents and Settings/Administrator/Desktop/Xillinx projects/Lab4/Lab3/DUT.v" into library work
+Analyzing Verilog file "C:/Documents and Settings/Administrator/Desktop/Xillinx projects/Lab4/Lab3/DUT_tb.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+WARNING:HDLCompiler:687 - "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" Line 5: Illegal redeclaration of module <glbl>.
+Starting static elaboration
+WARNING:HDLCompiler:189 - "C:/Documents and Settings/Administrator/Desktop/Xillinx projects/Lab4/Lab3/DUT.v" Line 55: Size mismatch in connection of port <ce>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Documents and Settings/Administrator/Desktop/Xillinx projects/Lab4/Lab3/DUT.v" Line 59: Size mismatch in connection of port <c>. Formal port size is 2-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Documents and Settings/Administrator/Desktop/Xillinx projects/Lab4/Lab3/DUT.v" Line 60: Size mismatch in connection of port <subtract>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Documents and Settings/Administrator/Desktop/Xillinx projects/Lab4/Lab3/DUT.v" Line 67: Size mismatch in connection of port <ce>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Documents and Settings/Administrator/Desktop/Xillinx projects/Lab4/Lab3/DUT.v" Line 71: Size mismatch in connection of port <c>. Formal port size is 48-bit while actual signal size is 33-bit.
+WARNING:HDLCompiler:189 - "C:/Documents and Settings/Administrator/Desktop/Xillinx projects/Lab4/Lab3/DUT.v" Line 73: Size mismatch in connection of port <subtract>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Documents and Settings/Administrator/Desktop/Xillinx projects/Lab4/Lab3/DUT.v" Line 80: Size mismatch in connection of port <ce>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Documents and Settings/Administrator/Desktop/Xillinx projects/Lab4/Lab3/DUT.v" Line 84: Size mismatch in connection of port <c>. Formal port size is 48-bit while actual signal size is 34-bit.
+WARNING:HDLCompiler:189 - "C:/Documents and Settings/Administrator/Desktop/Xillinx projects/Lab4/Lab3/DUT.v" Line 86: Size mismatch in connection of port <subtract>. Formal port size is 1-bit while actual signal size is 32-bit.
+Completed static elaboration
+Fuse Memory Usage: 67536 KB
+Fuse CPU Usage: 328 ms
+Compiling module VCC
+Compiling module GND
+Compiling module FDR
+Compiling module LUT3(INIT=8'b10101000)
+Compiling module LUT5(INIT=32'b101011001010110011...
+Compiling module INV
+Compiling module LUT2(INIT=4'b0110)
+Compiling module MUXCY
+Compiling module XORCY
+Compiling module FDE
+Compiling module CORDIC
+Compiling module ComplexMultiplier
+Compiling module DSP48A1(CARRYINREG=0,CARRYOUTREG...
+Compiling module MultAdd1
+Compiling module MultAdd2
+Compiling module MultAdd3
+Compiling module ComplexMultiplier1
+Compiling module ComplexMultiplier2
+Compiling module ComplexMultiplier3
+Compiling module DUT
+Compiling module DUT_tb
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 8 sub-compilation(s) to finish...
+Compiled 27 Verilog Units
+Built simulation executable C:/Documents and Settings/Administrator/Desktop/Xillinx projects/Lab4/Lab3/DUT_tb_isim_beh.exe
+Fuse Memory Usage: 78740 KB
+Fuse CPU Usage: 687 ms

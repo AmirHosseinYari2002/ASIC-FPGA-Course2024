@@ -1,0 +1,47 @@
+
+#Created by Constraints Editor (xc6slx45-csg324-3) - 2024/05/04
+NET "Clk" TNM_NET = Clk;
+TIMESPEC TS_Clk = PERIOD "Clk" 30 ns HIGH 50% INPUT_JITTER 60 ps;
+NET "Control<0>" OFFSET = IN 20 ns VALID 20 ns BEFORE "Clk" RISING;
+INST "Output1<0>" TNM = Output1_Group;
+INST "Output1<1>" TNM = Output1_Group;
+INST "Output1<2>" TNM = Output1_Group;
+INST "Output1<3>" TNM = Output1_Group;
+INST "Output1<4>" TNM = Output1_Group;
+INST "Output1<5>" TNM = Output1_Group;
+INST "Output1<6>" TNM = Output1_Group;
+INST "Output1<7>" TNM = Output1_Group;
+INST "Output1<8>" TNM = Output1_Group;
+INST "Output1<9>" TNM = Output1_Group;
+INST "Output1<10>" TNM = Output1_Group;
+INST "Output1<11>" TNM = Output1_Group;
+INST "Output1<12>" TNM = Output1_Group;
+INST "Output1<13>" TNM = Output1_Group;
+INST "Output1<14>" TNM = Output1_Group;
+INST "Output1<15>" TNM = Output1_Group;
+INST "Output1<16>" TNM = Output1_Group;
+INST "Output1<17>" TNM = Output1_Group;
+INST "Output1<18>" TNM = Output1_Group;
+INST "Output1<19>" TNM = Output1_Group;
+INST "Output1<20>" TNM = Output1_Group;
+INST "Output1<21>" TNM = Output1_Group;
+INST "Output1<22>" TNM = Output1_Group;
+INST "Output1<23>" TNM = Output1_Group;
+INST "Output1<24>" TNM = Output1_Group;
+INST "Output1<25>" TNM = Output1_Group;
+INST "Output1<26>" TNM = Output1_Group;
+INST "Output1<27>" TNM = Output1_Group;
+INST "Output1<28>" TNM = Output1_Group;
+INST "Output1<29>" TNM = Output1_Group;
+INST "Output1<30>" TNM = Output1_Group;
+INST "Output1<31>" TNM = Output1_Group;
+INST "Output1<32>" TNM = Output1_Group;
+INST "Output1<33>" TNM = Output1_Group;
+INST "Output1<34>" TNM = Output1_Group;
+INST "Output1<35>" TNM = Output1_Group;
+INST "Output1<36>" TNM = Output1_Group;
+INST "Output1<37>" TNM = Output1_Group;
+TIMEGRP "Output1_Group" OFFSET = OUT 20 ns AFTER "Clk";
+
+NET "Clk" LOC = L15;
+NET "Reset" LOC = A10;

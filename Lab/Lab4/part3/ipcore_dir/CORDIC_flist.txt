@@ -1,0 +1,14 @@
+# Output products list for <CORDIC>
+CORDIC.asy
+CORDIC.gise
+CORDIC.ngc
+CORDIC.sym
+CORDIC.v
+CORDIC.veo
+CORDIC.xco
+CORDIC.xise
+CORDIC\doc\cordic_ds249.pdf
+CORDIC\doc\cordic_v4_0_vinfo.html
+CORDIC_flist.txt
+CORDIC_readme.txt
+CORDIC_xmdf.tcl

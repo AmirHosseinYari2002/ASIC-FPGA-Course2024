@@ -1,0 +1,15 @@
+# Output products list for <MultAdd2>
+MultAdd2.asy
+MultAdd2.gise
+MultAdd2.ngc
+MultAdd2.sym
+MultAdd2.v
+MultAdd2.veo
+MultAdd2.xco
+MultAdd2.xise
+MultAdd2\doc\xbip_multadd_ds717.pdf
+MultAdd2\doc\xbip_multadd_v2_0_readme.txt
+MultAdd2\doc\xbip_multadd_v2_0_vinfo.html
+MultAdd2_flist.txt
+MultAdd2_xmdf.tcl
+_xmsgs\pn_parser.xmsgs

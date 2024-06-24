@@ -1,7 +1,0 @@
-//arch = zynq; split = false; format = BIN
-the_ROM_image:
-{
-	[bootloader]F:\intel_project\AX7015\new\update\release\ov5640_modify_ip\ov5640_sd\ov5640_sd.sdk\fsbl\Debug\fsbl.elf
-	F:\intel_project\AX7015\new\update\release\ov5640_modify_ip\ov5640_sd\ov5640_sd.sdk\system_wrapper_hw_platform_0\system_wrapper.bit
-	F:\intel_project\AX7015\new\update\release\ov5640_modify_ip\ov5640_sd\ov5640_sd.sdk\ov5640_sd\Debug\ov5640_sd.elf
-}

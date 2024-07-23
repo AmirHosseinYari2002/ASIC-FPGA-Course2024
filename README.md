@@ -6,6 +6,18 @@
 
 This repository contains the assignments, labratories and project that I completed for the ASIC/FPGA chip design course that I took in spring 2024.
 
+## Labs
+
+### Lab 1: Registers, Adders, and Counters
+1. **Ripple-Carry Adder**: Implement a 4-bit ripple-carry adder.
+2. **8-bit Signed Adder**: Extend to an 8-bit adder with registers.
+3. **Adder/Subtractor**: Modify to perform addition and subtraction.
+4. **Additional Experiments**: Test and verify circuits.
+
+### Lab 2: Complex State Machines and VGA Display
+1. **Custom Image Display**: Display a custom image on a VGA monitor.
+2. **VGA Adapter Initialization**: Initialize VGA Adapter to display the image.
+3. **VGA Animation**: Create animations using FSMs.
 
 
 ## FPGA Signal Processing Project

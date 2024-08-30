@@ -19,6 +19,10 @@ This repository contains the assignments, labratories and project that I complet
 2. **VGA Adapter Initialization**: Initialize VGA Adapter to display the image.
 3. **VGA Animation**: Create animations using FSMs.
 
+### Lab 3: Custom Embedded System with MicroBlaze
+1. **Hardware Setup**: Create a MicroBlaze-based system on Spartan-6 FPGA using Xilinx XPS.
+2. **Software Development**: Develop and test software in Xilinx SDK to interact with FPGA peripherals.
+3. **Enhanced Functionality**: Extend software to sum switch inputs and display results on LEDs.
 
 ## FPGA Signal Processing Project
 

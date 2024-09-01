@@ -39,6 +39,15 @@ This repository contains the assignments, labratories and project that I complet
 6. **AXI GPIO Communication**: Expand PS-PL communication using AXI GPIO for direct connections and interrupt handling.
 7. **Custom IP Creation**: Create a custom IP to manage PS-PL communication without AXI GPIO, using AXI bus and BRAM directly.
 
+#### Lab 6: Image Processing on Zynq - Edge Detection
+1. **Camera Interface and Image Capture**: Capture image data from a camera module, store it in DDR3 memory using VDMA, and display it on an HDMI monitor. Save the image to a micro SD card in BMP format using PS.
+2. **Image Preprocessing**: Convert the saved image to a 512×512 grayscale image with an 8-bit bit depth. Optionally, perform these transformations directly on the FPGA or PS.
+3. **Sobel Edge Detection Implementation**: Implement the Sobel edge detection algorithm using convolution with 3×3 kernels. Process grayscale images and generate an edge-detected output.
+4. **Line Buffer and Control Logic Design**: Develop a line buffer for efficient image processing, and control the flow of image data through the buffers to the Sobel processing module.
+5. **IP Packaging and Integration**: Package the Sobel edge detection module into an IP core, integrate it with DMA in Vivado, and connect it with PS and PL for full system implementation.
+6. **System Integration and HDMI Output**: Read the processed image data from the SD card using AXI DMA, process it with the IP core, and output the final edge-detected image to an HDMI display.
+7. **Software Development**: Develop C code to manage interrupts and control the DMA transfer between the PS and PL, ensuring proper synchronization and data integrity throughout the image processing pipeline.
+
 ### FPGA Signal Processing Project
 
 The goal is to implement simple signal processing on a Zynq FPGA, specifically generating, scrambling, descrambling, and displaying the spectrum of various digital signals on an HDMI monitor.

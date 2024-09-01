@@ -25,11 +25,19 @@ This repository contains the assignments, labratories and project that I complet
 3. **Enhanced Functionality**: Extend software to sum switch inputs and display results on LEDs.
 
 #### Lab 4: Getting Started with Xilinx ISE Design Suite
-
 1. **Introduction to Xilinx ISE**: Learn about the ISE Project Navigator interface, including the Start, Design, Files, and Libraries panels.
 2. **Design Creation**: Create a new project using the ISE Project Navigator, set the synthesis options, and create Verilog source files.
 3. **Synthesis Process**: Perform synthesis using XST, generate RTL and Technology schematics, and view the Design Summary/Reports.
 4. **Complex Multiplier Design**: Implement a complex multiplier with real and imaginary parts, and synthesize it using the Xilinx ISE Design Suite.
+
+#### Lab 5: Introduction to Zynq SoC and PS/PL Communication
+1. **Zynq Overview**: Learn about the Zynq-7000 family, integrating an ARM processor (PS) with an FPGA (PL).
+2. **2-bit Signed Adder**: Create a 2-bit signed adder using the FPGA's PL, with inputs from PL keys and output displayed on LEDs.
+3. **PS-PL Interconnection**: Implement a 32-bit ALU in PL, connect it to the PS, and verify its functionality using randomly generated test vectors from the PS.
+4. **BRAM Communication**: Store sine and cosine data in the FPGA's BRAM using the PS and generate signals based on this data using the PL.
+5. **Debugging with ILA**: Use the Integrated Logic Analyzer (ILA) to debug PS-PL communication by observing signals in BRAM.
+6. **AXI GPIO Communication**: Expand PS-PL communication using AXI GPIO for direct connections and interrupt handling.
+7. **Custom IP Creation**: Create a custom IP to manage PS-PL communication without AXI GPIO, using AXI bus and BRAM directly.
 
 ### FPGA Signal Processing Project
 

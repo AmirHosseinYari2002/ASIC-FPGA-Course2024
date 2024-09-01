@@ -24,6 +24,13 @@ This repository contains the assignments, labratories and project that I complet
 2. **Software Development**: Develop and test software in Xilinx SDK to interact with FPGA peripherals.
 3. **Enhanced Functionality**: Extend software to sum switch inputs and display results on LEDs.
 
+### Lab 4: Getting Started with Xilinx ISE Design Suite
+
+1. **Introduction to Xilinx ISE**: Learn about the ISE Project Navigator interface, including the Start, Design, Files, and Libraries panels.
+2. **Design Creation**: Create a new project using the ISE Project Navigator, set the synthesis options, and create Verilog source files.
+3. **Synthesis Process**: Perform synthesis using XST, generate RTL and Technology schematics, and view the Design Summary/Reports.
+4. **Complex Multiplier Design**: Implement a complex multiplier with real and imaginary parts, and synthesize it using the Xilinx ISE Design Suite.
+
 ## FPGA Signal Processing Project
 
 The goal is to implement simple signal processing on a Zynq FPGA, specifically generating, scrambling, descrambling, and displaying the spectrum of various digital signals on an HDMI monitor.
